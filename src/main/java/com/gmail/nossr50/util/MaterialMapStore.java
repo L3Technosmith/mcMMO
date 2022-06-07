@@ -3,6 +3,7 @@ package com.gmail.nossr50.util;
 import org.bukkit.Material;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
@@ -1027,6 +1028,26 @@ public class MaterialMapStore {
         treeFellerDestructibleWhiteList.add("red_mushroom_block");
     }
 
+    String[] flowers = new String[]{
+            "dandelion",
+            "poppy",
+            "blue_orchid",
+            "allium",
+            "azure_bluet",
+            "orange_tulip",
+            "white_tulip",
+            "red_tulip",
+            "pink_tulip",
+            "oxeye_daisey",
+            "cornflower",
+            "lily_of_the_valley",
+            "wither_rose",
+            "sunflower",
+            "lilac",
+            "rose_bush",
+            "peony"
+    };
+
     private void fillMossyWhiteList()
     {
         mossyWhiteList.add("cobblestone");
@@ -1034,7 +1055,12 @@ public class MaterialMapStore {
         mossyWhiteList.add("grass_path");
         mossyWhiteList.add("stone_bricks");
         mossyWhiteList.add("cobblestone_wall");
+
+        for(String flower : flowers) {
+            mossyWhiteList.add(flower);
+        }
     }
+
 
     private void fillAbilityBlackList()
     {
