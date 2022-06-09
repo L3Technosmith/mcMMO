@@ -663,6 +663,11 @@ public class HerbalismManager extends SkillManager {
             return false;
         }
 
+        if (MaterialMapStore.isFlower(blockState)) {
+            applyXpGain(100, XPGainReason.PVE, XPGainSource.SELF);
+        }
+
+
         return Herbalism.convertGreenTerraBlocks(blockState);
     }
 

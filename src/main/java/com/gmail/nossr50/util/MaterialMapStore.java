@@ -1,12 +1,13 @@
 package com.gmail.nossr50.util;
 
+import com.gmail.nossr50.locale.LocaleLoader;
+import com.gmail.nossr50.util.text.StringUtils;
+import org.bukkit.Bukkit;
+import org.bukkit.block.BlockState;
 import org.bukkit.Material;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Locale;
+import java.util.*;
 
 /**
  * Stores hash tables for item and block names
@@ -1028,7 +1029,7 @@ public class MaterialMapStore {
         treeFellerDestructibleWhiteList.add("red_mushroom_block");
     }
 
-    String[] flowers = new String[]{
+    static String[] flowers = new String[]{
             "dandelion",
             "poppy",
             "blue_orchid",
@@ -1038,7 +1039,7 @@ public class MaterialMapStore {
             "white_tulip",
             "red_tulip",
             "pink_tulip",
-            "oxeye_daisey",
+            "oxeye_daisy",
             "cornflower",
             "lily_of_the_valley",
             "wither_rose",
@@ -1047,6 +1048,39 @@ public class MaterialMapStore {
             "rose_bush",
             "peony"
     };
+
+    static Material[] FLOWER_MATERIALS = new Material[] {
+            Material.PEONY,
+            Material.ROSE_BUSH,
+            Material.LILAC,
+            Material.SUNFLOWER,
+            Material.WITHER_ROSE,
+            Material.LILY_OF_THE_VALLEY,
+            Material.CORNFLOWER,
+            Material.OXEYE_DAISY,
+            Material.WHITE_TULIP,
+            Material.RED_TULIP,
+            Material.PINK_TULIP,
+            Material.ORANGE_TULIP,
+            Material.AZURE_BLUET,
+            Material.ALLIUM,
+            Material.BLUE_ORCHID,
+            Material.POPPY,
+            Material.DANDELION
+    };
+
+    public static Material randomFlower() {
+        Random rng = new Random();
+        int randomNumber = rng.nextInt(FLOWER_MATERIALS.length);
+        return FLOWER_MATERIALS[randomNumber];
+    }
+
+    public static boolean isFlower(BlockState blockState) {
+        var ret = Arrays.asList(FLOWER_MATERIALS).contains(blockState.getType());
+
+        return ret;
+    }
+
 
     private void fillMossyWhiteList()
     {

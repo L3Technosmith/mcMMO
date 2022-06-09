@@ -1,5 +1,6 @@
 package com.gmail.nossr50.skills.herbalism;
 
+import com.gmail.nossr50.util.MaterialMapStore;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
 
@@ -32,6 +33,10 @@ public class Herbalism {
                 return true;
 
             default:
+                if (MaterialMapStore.isFlower(blockState)) {
+                    blockState.setType(MaterialMapStore.randomFlower());
+                    return true;
+                }
                 return false;
         }
     }
