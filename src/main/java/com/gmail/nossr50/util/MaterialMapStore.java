@@ -239,6 +239,9 @@ public class MaterialMapStore {
         intendedToolPickAxe.addAll(ores);
 
         intendedToolPickAxe.add("lapis_lazuli_ore");
+        intendedToolPickAxe.add("packed_mud");
+        intendedToolPickAxe.add("mud_bricks");
+        intendedToolPickAxe.add("reinforced_deepslate");
         intendedToolPickAxe.add("ice");
         intendedToolPickAxe.add("packed_ice");
         intendedToolPickAxe.add("blue_ice");
@@ -1023,6 +1026,8 @@ public class MaterialMapStore {
         treeFellerDestructibleWhiteList.add("spruce_leaves");
         treeFellerDestructibleWhiteList.add("azalea_leaves");
         treeFellerDestructibleWhiteList.add("flowering_azalea_leaves");
+        treeFellerDestructibleWhiteList.add("mangrove_leaves");
+        treeFellerDestructibleWhiteList.add("mangrove_roots");
         treeFellerDestructibleWhiteList.add("nether_wart_block");
         treeFellerDestructibleWhiteList.add("warped_wart_block");
         treeFellerDestructibleWhiteList.add("brown_mushroom_block");
@@ -1226,8 +1231,6 @@ public class MaterialMapStore {
     
     private void fillToolBlackList()
     {
-        //TODO: Add anvils / missing logs
-        //TODO: Reorganize this list, can we also dynamically populate some of this?
         toolBlackList.add("black_bed");
         toolBlackList.add("blue_bed");
         toolBlackList.add("brown_bed");
@@ -1336,6 +1339,9 @@ public class MaterialMapStore {
         toolBlackList.add("stripped_oak_wood");
         toolBlackList.add("stripped_spruce_log");
         toolBlackList.add("stripped_spruce_wood");
+        toolBlackList.add("mangrove_wood");
+        toolBlackList.add("mangrove_log");
+        toolBlackList.add("stripped_mangrove_log");
         toolBlackList.add("acacia_log");
         toolBlackList.add("acacia_wood");
         toolBlackList.add("birch_log");
